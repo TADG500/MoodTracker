@@ -15,13 +15,18 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView mSmiley;
-    private Button  mCommentaryButton;
-    private Button  mHistoricalButton;
-    private TextView mDebugText;
-    public static int incre = 0;
-    ToastMessage myToast = new ToastMessage();
-    private String message = "";
+    //////////////////////  variable : start //////////////////////
+        private ImageView mSmiley;
+        private Button  mCommentaryButton;
+        private Button  mHistoricalButton;
+        private TextView mDebugText;
+        private ToastMessage myToast = new ToastMessage();
+        private String message = "";
+    //////////////////////  variable : end  //////////////////////
+
+    //////////////////////  debug variable : start //////////////////////
+        public static int incre = 0;
+    //////////////////////  debug variable : end  //////////////////////
 
 
 
@@ -29,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //////////////////////  properties : start //////////////////////
+        //////////////////////  layout connection : start //////////////////////
             mCommentaryButton = (Button) findViewById(R.id.activity_main_comm_btn);
             mHistoricalButton = (Button) findViewById(R.id.activity_main_histo_btn);
             mDebugText = (TextView) findViewById(R.id.activity_main_mood_debugText);
-        //////////////////////  properties : end  //////////////////////
+        //////////////////////  layout connection  : end  //////////////////////
 
         //////////////////////  mCommentaryButton setOnClickListener redefinition : start   //////////////////////
             mCommentaryButton.setOnClickListener(new View.OnClickListener() {
