@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
     private ImageView mSmiley;
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Button     mHistoricalButton;
     private TextView     mDebugText;
     public static int incre = 0;
-    public String message="";
-
+    ToastMessage myToast = new ToastMessage();
+    private String message = "";
 
 
 
@@ -36,25 +36,23 @@ public class MainActivity extends AppCompatActivity {
         mCommentaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AffichageToast(message);
+                message = ("display commentary pop up");
+                myToast.ToastDisplay(message, getApplicationContext());
                 mDebugText.setText("Affichage popup Commentaire");
             }
         });
         mHistoricalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AffichageToast(message);
+                message = ("display history pop up");
+                myToast.ToastDisplay(message, getApplicationContext());
                 mDebugText.setText("Affichage popup Historique");
             }
         });
     }
 
 
-    public void AffichageToast(String mMessage){
 
-        Toast.makeText(this , mMessage, Toast.LENGTH_SHORT).show();
-        Log.i("DEBUG", mMessage);
-    }
 }
 
 
