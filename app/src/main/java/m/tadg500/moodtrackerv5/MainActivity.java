@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView mSmiley;
-    private Button     mCommentaryButton;
-    private Button     mHistoricalButton;
-    private TextView     mDebugText;
+    private Button  mCommentaryButton;
+    private Button  mHistoricalButton;
+    private TextView mDebugText;
     public static int incre = 0;
     ToastMessage myToast = new ToastMessage();
     private String message = "";
@@ -29,26 +29,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //////////////////////  properties : start //////////////////////
+            mCommentaryButton = (Button) findViewById(R.id.activity_main_comm_btn);
+            mHistoricalButton = (Button) findViewById(R.id.activity_main_histo_btn);
+            mDebugText = (TextView) findViewById(R.id.activity_main_mood_debugText);
+        //////////////////////  properties : end  //////////////////////
 
-        mCommentaryButton = (Button) findViewById(R.id.activity_main_comm_btn);
-        mHistoricalButton = (Button) findViewById(R.id.activity_main_histo_btn);
-        mDebugText = (TextView) findViewById(R.id.activity_main_mood_debugText);
-        mCommentaryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                message = ("display commentary pop up");
-                myToast.ToastDisplay(message, getApplicationContext());
-                mDebugText.setText("Affichage popup Commentaire");
-            }
-        });
-        mHistoricalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                message = ("display history pop up");
-                myToast.ToastDisplay(message, getApplicationContext());
-                mDebugText.setText("Affichage popup Historique");
-            }
-        });
+        //////////////////////  mCommentaryButton setOnClickListener redefinition : start   //////////////////////
+            mCommentaryButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    message = ("display commentary pop up");
+                    myToast.ToastDisplay(message, getApplicationContext());
+                    mDebugText.setText("Affichage popup Commentaire");
+                }
+            });
+        //////////////////////  mCommentaryButton setOnClickListener redefinition : stop   //////////////////////
+
+        //////////////////////  mHistoricalButton setOnClickListener redefinition : start   //////////////////////
+            mHistoricalButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    message = ("display history pop up");
+                    myToast.ToastDisplay(message, getApplicationContext());
+                    mDebugText.setText("Affichage popup Historique");
+                }
+            });
+        //////////////////////  mHistoricalButton setOnClickListener redefinition : start   //////////////////////
     }
 
 
